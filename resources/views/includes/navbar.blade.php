@@ -1,4 +1,4 @@
-<nav class="flex items-center justify-between px-10 py-3 bg-white shadow-md">
+<nav class="sticky top-0 left-0 w-full flex items-center justify-between px-10 py-3 bg-white shadow-md">
     <a href="{{ route('client.home') }}" class="flex items-center gap-3">
         <img src="{{ asset('/storage/assets/img/logo.png') }}" alt="Logo SMK 2 Muhammadiyah Cibiru - Kota Bandung"
             class="w-[50px] h-[50px]">
