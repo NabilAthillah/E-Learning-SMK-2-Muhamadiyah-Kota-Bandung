@@ -27,7 +27,7 @@ class KelasResource extends Resource
 {
     protected static ?string $model = Kelas::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-book-open';
+    protected static ?string $navigationIcon = 'heroicon-s-book-open';
 
     protected static ?string $navigationLabel = 'Kelas';
 

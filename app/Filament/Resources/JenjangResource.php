@@ -17,7 +17,7 @@ class JenjangResource extends Resource
 {
     protected static ?string $model = Jenjang::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-chart-bar';
+    protected static ?string $navigationIcon = 'heroicon-s-chart-bar';
 
     protected static ?string $navigationLabel = 'Jenjang';
 

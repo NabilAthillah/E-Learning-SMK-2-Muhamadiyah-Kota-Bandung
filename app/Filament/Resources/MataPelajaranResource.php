@@ -25,7 +25,7 @@ class MataPelajaranResource extends Resource
 {
     protected static ?string $model = MataPelajaran::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
+    protected static ?string $navigationIcon = 'heroicon-s-academic-cap';
 
     protected static ?string $navigationLabel = 'Mata Pelajaran';
 
