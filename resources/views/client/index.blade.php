@@ -3,12 +3,12 @@
     <div id="default-carousel" class="relative w-full h-[calc(100vh-74px)]" data-carousel="slide">
         <div class="relative h-[calc(100vh-74px)] overflow-hidden rounded-lg">
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ asset('/storage/assets/img/carousel_1.png') }}"
-                    class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ asset('/storage/assets/img/carousel_3.avif')  }}"
+                    class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover object-center" alt="...">
             </div>
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ asset('/storage/assets/img/carousel_2.png') }}"
-                    class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ asset('/storage/assets/img/carousel_4.png')  }}"
+                    class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover object-center" alt="...">
             </div>
         </div>
         <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
@@ -125,21 +125,21 @@
 
         <div class="flex gap-12 pt-8">
             <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px] rounded-[8px]">
-                <img src="{{ asset('/storage/assets/img/fitur_4.png') }}" alt="" class="w-[350px] h-[350px]">
+                <img src="{{ asset('/storage/assets/img/aktifitas_1.jpg') }}" alt="" class="w-[350px] h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
                 <div class="flex flex-col gap-2 p-6">
                     <h6 class="font-bold text-2xl text-[#041D4D] ">Halal Bihalal</h6>
                     <p class="font-semibold text-[16px] text-[#041D4D]">Rabu, 9 April 2025</p>
                 </div>
             </div>
             <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px] rounded-[8px]">
-                <img src="{{ asset('/storage/assets/img/fitur_4.png') }}" alt="" class="w-[350px] h-[350px]">
+                <img src="{{ asset('/storage/assets/img/aktifitas_2.jpg') }}" alt="" class="w-[350px] h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
                 <div class="flex flex-col gap-2 p-6">
                     <h6 class="font-bold text-2xl text-[#041D4D] ">Halal Bihalal</h6>
                     <p class="font-semibold text-[16px] text-[#041D4D]">Rabu, 9 April 2025</p>
                 </div>
             </div>
             <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px] rounded-[8px]">
-                <img src="{{ asset('/storage/assets/img/fitur_4.png') }}" alt="" class="w-[350px] h-[350px]">
+                <img src="{{ asset('/storage/assets/img/aktifitas_3.jpg') }}" alt="" class="w-[350px] h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
                 <div class="flex flex-col gap-2 p-6">
                     <h6 class="font-bold text-2xl text-[#041D4D] ">Halal Bihalal</h6>
                     <p class="font-semibold text-[16px] text-[#041D4D]">Rabu, 9 April 2025</p>
@@ -158,22 +158,19 @@
             </div>
             <div class="flex gap-12">
                 <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px]  h-[300px] rounded-[8px]">
-                    <img src="{{ asset('/storage/assets/img/fitur_4.png') }}" alt="" class="w-[350px] h-[250px]">
-                    <div class="absolute left-48 mt-4 ml-2 rounded-full w-[86px] h-[26px] bg-[#041D4D] flex items-center justify-center">
-                        <h1 class="font-semibold text-[14px] text-white">Kelas 10</h1>
-                    </div>
+                    <img src="{{ asset('/storage/assets/img/aktifitas_1.jpg') }}" alt="" class="w-[350px] h-[250px] object-cover object-center rounded-[8px_8px_0px_0px]">
                     <div class="flex flex-col gap-2">
                         <h6 class="font-bold text-2xl text-[#041D4D] ">Matematika</h6>
                     </div>
                 </div>
                 <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px]  h-[300px] rounded-[8px]">
-                    <img src="{{ asset('/storage/assets/img/fitur_4.png') }}" alt="" class="w-[350px] h-[250px]">
+                    <img src="{{ asset('/storage/assets/img/aktifitas_2.jpg') }}" alt="" class="w-[350px] h-[250px] object-cover object-center rounded-[8px_8px_0px_0px]">
                     <div class="flex flex-col gap-2">
                         <h6 class="font-bold text-2xl text-[#041D4D]">Matematika</h6>
                     </div>
                 </div>
                 <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px]  h-[300px] rounded-[8px]">
-                    <img src="{{ asset('/storage/assets/img/fitur_4.png') }}" alt="" class="w-[350px] h-[250px]">
+                    <img src="{{ asset('/storage/assets/img/aktifitas_3.jpg') }}" alt="" class="w-[350px] h-[250px] object-cover object-center rounded-[8px_8px_0px_0px]">
                     <div class="flex flex-col gap-2">
                         <h6 class="font-bold text-2xl text-[#041D4D] ">Matematika</h6>
                     </div>
