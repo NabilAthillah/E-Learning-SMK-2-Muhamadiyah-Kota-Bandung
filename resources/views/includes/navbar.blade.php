@@ -9,7 +9,7 @@
         <div class="flex item-center gap-4">
             <a href="#">Home</a>
             <a href="#">Kursus</a>
-            <a href="#">Guru</a>
+            <a href="/guru">Guru</a>
         </div>
         <div class="w-[2px] h-[24px] bg-black"></div>
         @if (auth()->user())
