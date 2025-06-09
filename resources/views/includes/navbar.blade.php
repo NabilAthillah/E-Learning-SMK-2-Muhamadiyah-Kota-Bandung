@@ -8,8 +8,8 @@
     <!-- Desktop Menu -->
     <div class="hidden md:flex items-center gap-3">
         <div class="flex items-center gap-4">
-            <a href="#">Home</a>
-            <a href="#">Kursus</a>
+            <a href="/">Home</a>
+            <a href="/kursus">Kursus</a>
             <a href="/guru">Guru</a>
         </div>
         <div class="w-[2px] h-[24px] bg-black"></div>

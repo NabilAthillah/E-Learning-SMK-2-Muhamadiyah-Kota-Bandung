@@ -133,7 +133,7 @@
                 <img src="{{ asset('/storage/assets/img/aktifitas_1.jpg') }}" alt=""
                     class="w-full h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
                 <div class="flex flex-col gap-2 p-6">
-                    <h6 class="font-bold text-2xl text-[#041D4D]">Halal Bihalal</h6>
+                    <a href="/bihalal"><h6 class="font-bold text-2xl text-[#041D4D] ">Halal Bihalal</h6></a>
                     <p class="font-semibold text-[16px] text-[#041D4D]">Rabu, 9 April 2025</p>
                 </div>
             </div>

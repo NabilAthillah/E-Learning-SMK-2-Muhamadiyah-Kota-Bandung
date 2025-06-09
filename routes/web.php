@@ -9,3 +9,5 @@ Route::name('client.')->controller(ClientController::class)->group(function () {
     Route::get('/bihalal', 'getSatu')->name('bihalal');
     Route::get('/kursus', 'getKursus')->name('kursus');
 });
+
+
