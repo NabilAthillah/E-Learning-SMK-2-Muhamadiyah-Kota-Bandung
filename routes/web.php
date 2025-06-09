@@ -5,4 +5,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::name('client.')->controller(ClientController::class)->group(function () {
     Route::get('/', 'index')->name('home');
+    Route::get('/kursus', 'getKursus')->name('kursus');
 });
