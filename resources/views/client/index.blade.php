@@ -3,12 +3,14 @@
     <div id="default-carousel" class="relative w-full h-[calc(100vh-74px)]" data-carousel="slide">
         <div class="relative h-[calc(100vh-74px)] overflow-hidden rounded-lg">
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ asset('/storage/assets/img/carousel_3.avif')  }}"
-                    class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover object-center" alt="...">
+                <img src="{{ asset('/storage/assets/img/carousel_3.avif') }}"
+                    class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover object-center"
+                    alt="...">
             </div>
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ asset('/storage/assets/img/carousel_4.png')  }}"
-                    class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover object-center" alt="...">
+                <img src="{{ asset('/storage/assets/img/carousel_4.png') }}"
+                    class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover object-center"
+                    alt="...">
             </div>
         </div>
         <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
@@ -65,7 +67,7 @@
             muka secara langsung</p>
     </section>
 
-    <section class="flex flex-col justify-center items-center gap-5 px-[110px] py-9 bg-[#f5f5f9] sm:px-10 md:px-20 lg:px-24 xl:px-28">
+    <section class="flex flex-col justify-center items-center gap-5 px-[110px] py-9 bg-[#f5f5f9] ">
         <div class="flex items-center gap-2">
             <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -80,20 +82,20 @@
             </svg>
             <h2 class="font-bold text-[36px] text-black">Fitur E-Learning</h2>
         </div>
-        <div class="grid grid-cols-3 gap-auto justify-between w-full sm:px-10 md:px-20 lg:px-24 xl:px-28 py-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-between w-full">
             <div
-                class="flex flex-col items-center justify-self-center gap-3 p-6 bg-white shadow-md w-[300px] rounded-[8px]">
+                class="flex flex-col items-center justify-self-center gap-3 p-6 bg-white shadow-md w-full max-w-[300px] rounded-[8px] mx-auto">
                 <img src="{{ asset('/storage/assets/img/fitur_1.png') }}" alt="" class="w-[150px] h-[150px]">
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-2 text-center">
                     <h6 class="font-semibold text-[24px] text-[#041D4D]">E-Learning</h6>
                     <p class="font-light text-[16px] text-black">Memudahkan guru dan siswa belajar dari mana saja, kapan
                         saja, lewat internet.</p>
                 </div>
             </div>
             <div
-                class="flex flex-col items-center justify-self-center gap-3 p-6 bg-white shadow-md w-[300px] rounded-[8px] sm:px-10 md:px-20 lg:px-24 xl:px-28 py-6">
+                class="flex flex-col items-center justify-self-center gap-3 p-6 bg-white shadow-md w-full max-w-[300px] rounded-[8px] mx-auto">
                 <img src="{{ asset('/storage/assets/img/fitur_2.png') }}" alt="" class="w-[150px] h-[150px]">
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-2 text-center">
                     <h6 class="font-semibold text-[24px] text-[#041D4D]">Kursus</h6>
                     <p class="font-light text-[16px] text-black">Memudahkan guru untuk mengunggah materi pembelajaran
                         seperti video, dokumen, atau tugas. Siswa bisa langsung mengakses semua materi tersebut dengan mudah
@@ -101,17 +103,19 @@
                 </div>
             </div>
             <div
-                class="flex flex-col items-center justify-self-center gap-3 p-6 bg-white shadow-md w-[300px] rounded-[8px] sm:px-10 md:px-20 lg:px-24 xl:px-28 py-6">
+                class="flex flex-col items-center justify-self-center gap-3 p-6 bg-white shadow-md w-full max-w-[300px] rounded-[8px] mx-auto">
                 <img src="{{ asset('/storage/assets/img/fitur_3.png') }}" alt="" class="w-[150px] h-[150px]">
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-2 text-center">
                     <h6 class="font-semibold text-[24px] text-[#041D4D]">Aktivitas Sekolah</h6>
                     <p class="font-light text-[16px] text-black">Memudahkan siswa dan guru untuk melihat aktivitas di
                         sekolah.</p>
                 </div>
             </div>
+        </div>
+
     </section>
 
-    <section class="flex flex-col items-center p-6 bg-[#041D4D] shadow-md w-full sm:px-10 md:px-20 lg:px-24 xl:px-28 py-6">
+    <section class="flex flex-col items-center p-6 bg-[#041D4D] shadow-md w-full">
         <div class="flex gap-4 items-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="white" class="w-[40px] h-[40px]">
@@ -123,62 +127,73 @@
             </h2>
         </div>
 
-        <div class="flex gap-12 pt-8">
-            <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px] rounded-[8px]">
-                <img src="{{ asset('/storage/assets/img/aktifitas_1.jpg') }}" alt="" class="w-[350px] h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
+        <!-- Responsive grid wrapper -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 w-full justify-items-center">
+            <div class="flex flex-col items-center gap-3 bg-white shadow-md w-full max-w-[350px] rounded-[8px]">
+                <img src="{{ asset('/storage/assets/img/aktifitas_1.jpg') }}" alt=""
+                    class="w-full h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
                 <div class="flex flex-col gap-2 p-6">
                     <a href="/bihalal"><h6 class="font-bold text-2xl text-[#041D4D] ">Halal Bihalal</h6></a>
                     <p class="font-semibold text-[16px] text-[#041D4D]">Rabu, 9 April 2025</p>
                 </div>
             </div>
-            <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px] rounded-[8px]">
-                <img src="{{ asset('/storage/assets/img/aktifitas_2.jpg') }}" alt="" class="w-[350px] h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
+            <div class="flex flex-col items-center gap-3 bg-white shadow-md w-full max-w-[350px] rounded-[8px]">
+                <img src="{{ asset('/storage/assets/img/aktifitas_2.jpg') }}" alt=""
+                    class="w-full h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
                 <div class="flex flex-col gap-2 p-6">
-                    <h6 class="font-bold text-2xl text-[#041D4D] ">Halal Bihalal</h6>
+                    <h6 class="font-bold text-2xl text-[#041D4D]">Halal Bihalal</h6>
                     <p class="font-semibold text-[16px] text-[#041D4D]">Rabu, 9 April 2025</p>
                 </div>
             </div>
-            <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px] rounded-[8px]">
-                <img src="{{ asset('/storage/assets/img/aktifitas_3.jpg') }}" alt="" class="w-[350px] h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
+            <div class="flex flex-col items-center gap-3 bg-white shadow-md w-full max-w-[350px] rounded-[8px]">
+                <img src="{{ asset('/storage/assets/img/aktifitas_3.jpg') }}" alt=""
+                    class="w-full h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
                 <div class="flex flex-col gap-2 p-6">
-                    <h6 class="font-bold text-2xl text-[#041D4D] ">Halal Bihalal</h6>
+                    <h6 class="font-bold text-2xl text-[#041D4D]">Halal Bihalal</h6>
                     <p class="font-semibold text-[16px] text-[#041D4D]">Rabu, 9 April 2025</p>
                 </div>
             </div>
         </div>
     </section>
 
+
     <section>
         <div class="flex flex-col items-center justify-center gap-5 px-[100px] py-6">
             <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[40px] h-[40px]">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-[40px] h-[40px]">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                </svg>
                 <h2 class="font-bold text-[36px] text-[#041D4D]">Kursus / Mata Pelajaran</h2>
             </div>
-            <div class="flex gap-12">
-                <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px]  h-[300px] rounded-[8px]">
-                    <img src="{{ asset('/storage/assets/img/aktifitas_1.jpg') }}" alt="" class="w-[350px] h-[250px] object-cover object-center rounded-[8px_8px_0px_0px]">
-                    <div class="flex flex-col gap-2">
-                        <h6 class="font-bold text-2xl text-[#041D4D] ">Matematika</h6>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                @forelse ($mataPelajaran as $matpel)
+                    <div
+                        class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px] h-[300px] rounded-[8px] relative">
+                        <img src="{{ asset('/storage/assets/img/aktifitas_1.jpg') }}" alt=""
+                            class="w-[350px] h-[250px] object-cover object-center rounded-[8px_8px_0px_0px]">
+                        <div class="flex flex-col gap-2">
+                            <h6 class="font-bold text-2xl text-[#041D4D] ">{{ $matpel->nama }}</h6>
+                        </div>
+                        @foreach ($kelas as $k)
+                            <div
+                                class="absolute top-2 right-4 bg-[#041D4D] text-white text-sm font-semibold rounded-full px-4 py-1 shadow">
+                                {{ $k->tingkat ?? 'Kelas Tidak Diketahui' }} - {{ $k->nama ?? '' }}
+                            </div>
+                        @endforeach
                     </div>
-                </div>
-                <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px]  h-[300px] rounded-[8px]">
-                    <img src="{{ asset('/storage/assets/img/aktifitas_2.jpg') }}" alt="" class="w-[350px] h-[250px] object-cover object-center rounded-[8px_8px_0px_0px]">
-                    <div class="flex flex-col gap-2">
-                        <h6 class="font-bold text-2xl text-[#041D4D]">Matematika</h6>
+                @empty
+                    <div class="col-span-3 text-center text-gray-500 py-12 text-lg font-semibold">
+                        Tidak ada mata pelajaran tersedia.
                     </div>
-                </div>
-                <div class="flex flex-col items-center justify-self-center gap-3 bg-white shadow-md w-[350px]  h-[300px] rounded-[8px]">
-                    <img src="{{ asset('/storage/assets/img/aktifitas_3.jpg') }}" alt="" class="w-[350px] h-[250px] object-cover object-center rounded-[8px_8px_0px_0px]">
-                    <div class="flex flex-col gap-2">
-                        <h6 class="font-bold text-2xl text-[#041D4D] ">Matematika</h6>
-                    </div>
-                </div>
+                @endforelse
             </div>
-          <div class="gap-2 py-2 px-10 rounded-full border border-[#041D4D]">
-            <button class="text-[#041D4D] font-semibold">Lihat Selengkapnya</button>
-          </div>
-        </div>
+
+            <div class="gap-2 py-2 px-10 rounded-full border border-[#041D4D]">
+                <a class="text-[#041D4D] font-semibold" href="/kursus">Lihat Selengkapnya</a>
+            </div>
+
+
     </section>
 @endsection
