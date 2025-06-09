@@ -67,6 +67,13 @@ class KelasResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(function (Builder $query) {
+                $user = auth()->user();
+
+                if ($user->hasRole('wali_kelas')) {
+                    $query->where('wali_kelas_id', $user->id);
+                }
+            })
             ->columns([
                 TextColumn::make('nama')
                     ->label('Nama')
