@@ -6,7 +6,7 @@
     <div>
         <div class="flex flex-col gap-6 px-6 md:px-8 lg:grid lg:grid-cols-3 lg:gap-6">
             @forelse ($mataPelajaran as $matpel)
-                <div class="flex flex-col bg-[#F7F7F7] py-12">
+                <div class="flex flex-col py-12">
                     <div class="flex flex-wrap gap-6 md:gap-12 px-6 md:px-8">
                         <div class="items-start justify-start">
                             <div

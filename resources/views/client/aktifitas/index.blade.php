@@ -4,18 +4,16 @@
     {{-- Gambar utama --}}
     <div class="relative h-[60vh] md:h-[75vh] rounded-lg">
         <div>
-            <img src="{{ asset('/storage/assets/img/carousel_4.png')  }}"
+            <img src="{{ $data->getFirstMediaUrl()  }}"
                 class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover object-center" alt="...">
         </div>
     </div>
 
     {{-- Deskripsi --}}
     <div class="px-4 sm:px-6 md:px-[80px] lg:px-[150px] py-8">
-        <h2 class="font-bold text-[28px] md:text-[36px] text-black py-6">Halal Bihalal</h2>
+        <h2 class="font-bold text-[28px] md:text-[36px] text-black py-6">{{ $data->title  }}</h2>
         <p class="text-[16px] md:text-[20px] text-black py-6">
-            Halal bihalal di sekolah adalah sebuah tradisi berkumpul dan bersilaturahmi yang biasanya dilaksanakan setelah momen Idul Fitri. Acara ini bertujuan untuk mempererat hubungan antar siswa, guru, dan staf sekolah dengan saling memaafkan atas kesalahan yang terjadi selama masa belajar dan beraktivitas bersama.
-            Dalam halal bihalal sekolah, biasanya diadakan kegiatan seperti doa bersama, sambutan dari kepala sekolah, dan sesi saling berjabat tangan sambil mengucapkan permohonan maaf dan saling mendoakan kebaikan. Acara ini juga menjadi kesempatan untuk menumbuhkan rasa kekeluargaan dan semangat kebersamaan di lingkungan sekolah.
-            Halal bihalal di sekolah bukan hanya sekadar tradisi, tetapi juga merupakan momen penting untuk membangun suasana positif, meningkatkan toleransi, dan menanamkan nilai-nilai kebersamaan serta saling menghargai antar seluruh warga sekolah.
+            {{ $data->description }}
         </p>
     </div>
 

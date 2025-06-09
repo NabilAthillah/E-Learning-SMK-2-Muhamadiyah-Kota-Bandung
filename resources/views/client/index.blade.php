@@ -128,31 +128,17 @@
         </div>
 
         <!-- Responsive grid wrapper -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 w-full justify-items-center">
-            <div class="flex flex-col items-center gap-3 bg-white shadow-md w-full max-w-[350px] rounded-[8px]">
-                <img src="{{ asset('/storage/assets/img/aktifitas_1.jpg') }}" alt=""
-                    class="w-full h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
-                <div class="flex flex-col gap-2 p-6">
-                    <a href="/bihalal"><h6 class="font-bold text-2xl text-[#041D4D] ">Halal Bihalal</h6></a>
-                    <p class="font-semibold text-[16px] text-[#041D4D]">Rabu, 9 April 2025</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 w-full justify-items-center">\
+            @foreach ($activity as $item)            
+                <div class="flex flex-col items-center gap-3 bg-white shadow-md w-full max-w-[350px] rounded-[8px]">
+                    <img src="{{ $item->getFirstMediaUrl() }}" alt=""
+                        class="w-full h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
+                    <div class="flex flex-col items-center gap-2 p-6">
+                        <a href={{ '/bihalal/' . $item->id }}><h6 class="font-bold text-2xl text-[#041D4D] ">{{ $item->title  }}</h6></a>
+                        <p class="font-semibold text-[16px] text-[#041D4D]">{{ Carbon\Carbon::parse($item->date)->format('d F Y')  }}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="flex flex-col items-center gap-3 bg-white shadow-md w-full max-w-[350px] rounded-[8px]">
-                <img src="{{ asset('/storage/assets/img/aktifitas_2.jpg') }}" alt=""
-                    class="w-full h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
-                <div class="flex flex-col gap-2 p-6">
-                    <h6 class="font-bold text-2xl text-[#041D4D]">Halal Bihalal</h6>
-                    <p class="font-semibold text-[16px] text-[#041D4D]">Rabu, 9 April 2025</p>
-                </div>
-            </div>
-            <div class="flex flex-col items-center gap-3 bg-white shadow-md w-full max-w-[350px] rounded-[8px]">
-                <img src="{{ asset('/storage/assets/img/aktifitas_3.jpg') }}" alt=""
-                    class="w-full h-[350px] object-cover object-center rounded-[8px_8px_0px_0px]">
-                <div class="flex flex-col gap-2 p-6">
-                    <h6 class="font-bold text-2xl text-[#041D4D]">Halal Bihalal</h6>
-                    <p class="font-semibold text-[16px] text-[#041D4D]">Rabu, 9 April 2025</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
 
