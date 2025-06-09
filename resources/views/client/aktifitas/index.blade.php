@@ -4,7 +4,7 @@
     {{-- Gambar utama --}}
     <div class="relative h-[60vh] md:h-[75vh] rounded-lg">
         <div>
-            <img src="{{ asset('/assets/profile.jpg')}}"
+            <img src="{{ asset('/storage/assets/img/carousel_4.png')  }}"
                 class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover object-center" alt="...">
         </div>
     </div>
