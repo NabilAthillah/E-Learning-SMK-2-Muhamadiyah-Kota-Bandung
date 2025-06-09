@@ -4,6 +4,7 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User; // Pastikan model ini di-import
 
 class ClientController extends Controller
 {
@@ -12,10 +13,16 @@ class ClientController extends Controller
     }
 
     public function getGuru() {
-        return view('client.guru.index'); }
+        $guru = User::whereHas('roles', function ($query) {
+            $query->where('name', 'guru');})->get();
+        return view('client.guru.index', compact('guru'));
+    }
+
 
     public function getSatu() {
-        return view('client.aktifitas.index'); }
+        return view('client.aktifitas.index');
+    }
+
     public function getKursus() {
         return view('client.kursus.index');
     }
