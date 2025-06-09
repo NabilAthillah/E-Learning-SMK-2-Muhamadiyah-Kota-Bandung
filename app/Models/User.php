@@ -3,6 +3,10 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasName;
+use Filament\Panel;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,10 +16,10 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements HasMedia
+class User extends Authenticatable implements FilamentUser, HasName
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, HasRoles, InteractsWithMedia;
+    use HasFactory, Notifiable, HasRoles, HasUuids;
 
     /**
      * The attributes that are mass assignable.
@@ -23,7 +27,7 @@ class User extends Authenticatable implements HasMedia
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'nama',
         'email',
         'password',
         'nomor_induk',
@@ -54,21 +58,26 @@ class User extends Authenticatable implements HasMedia
         ];
     }
 
-    public function registerMediaConversions(?Media $media = null): void
+    protected $primaryKey = 'id';
+    public $incrementing = false;
+    protected $keyType = 'string';
+    public function canAccessPanel(Panel $panel): bool
     {
-        $this
-            ->addMediaConversion('preview')
-            ->fit(Fit::Contain, 300, 300)
-            ->nonQueued();
+        return true;
     }
 
-    public function getUserPermissions()
+    public function getFilamentName(): string
     {
-        return $this->getAllPermissions()->mapWithKeys(fn($permission) => [$permission['name'] => true]);
+        return "{$this->nama}";
     }
 
-    public function wali_kelas()
+    public function kelas()
     {
-        return $this->hasMany(Kelas::class, 'wali_kelas_id');
+        return $this->belongsToMany(Kelas::class, 'kelas_user');
+    }
+
+    public function tugasSiswa()
+    {
+        return $this->hasMany(TugasSiswa::class, 'siswa_id');
     }
 }

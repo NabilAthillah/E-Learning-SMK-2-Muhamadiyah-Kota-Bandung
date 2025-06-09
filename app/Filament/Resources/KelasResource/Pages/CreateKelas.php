@@ -9,9 +9,4 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateKelas extends CreateRecord
 {
     protected static string $resource = KelasResource::class;
-
-    public static function canAccess(array $parameters = []): bool
-    {
-        return auth()->user()->hasPermissionTo('create kelas');
-    }
 }

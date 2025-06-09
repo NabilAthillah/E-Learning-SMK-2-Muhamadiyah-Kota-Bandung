@@ -2,32 +2,35 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
 {
-    use HasFactory;
+    use HasUuids;
+
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     protected $guarded = [];
 
-    public function jenjang()
-    {
-        return $this->belongsTo(Jenjang::class, 'jenjang_id');
-    }
-
-    public function jurusan()
-    {
-        return $this->belongsTo(Jurusan::class, 'jurusan_id');
-    }
-
-    public function wali_kelas()
+    public function waliKelas()
     {
         return $this->belongsTo(User::class, 'wali_kelas_id');
     }
 
-    public function mata_pelajarans()
+    public function siswa()
     {
-        return $this->belongsToMany(MataPelajaran::class);
+        return $this->belongsToMany(User::class, 'kelas_user');
+    }
+
+    public function pengajaran()
+    {
+        return $this->hasMany(Pengajaran::class);
+    }
+
+    public function mataPelajaran()
+    {
+        return $this->belongsToMany(MataPelajaran::class, 'pengajaran', 'kelas_id', 'mapel_id');
     }
 }

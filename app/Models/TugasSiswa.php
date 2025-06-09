@@ -7,23 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Pertemuan extends Model implements HasMedia
+class TugasSiswa extends Model implements HasMedia
 {
     use HasUuids, InteractsWithMedia;
 
-    protected $table = 'pertemuan';
+    protected $table= 'tugas_siswa';
     protected $keyType = 'string';
     public $incrementing = false;
 
     protected $guarded = [];
 
-    public function pengajaran()
+    public function pertemuan()
     {
-        return $this->belongsTo(Pengajaran::class);
+        return $this->belongsTo(Pertemuan::class);
     }
 
-    public function tugasSiswa()
+    public function siswa()
     {
-        return $this->hasMany(TugasSiswa::class);
+        return $this->belongsTo(User::class, 'siswa_id');
     }
 }

@@ -4,19 +4,16 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\MataPelajaranResource\Pages;
 use App\Filament\Resources\MataPelajaranResource\RelationManagers;
-use App\Models\Kelas;
+use App\Filament\Resources\MataPelajaranResource\RelationManagers\KelasRelationManager;
 use App\Models\MataPelajaran;
 use App\Models\User;
 use Filament\Forms;
-use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -25,20 +22,20 @@ class MataPelajaranResource extends Resource
 {
     protected static ?string $model = MataPelajaran::class;
 
-    protected static ?string $navigationIcon = 'heroicon-s-academic-cap';
-
+    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
+    protected static ?string $label = 'Mata Pelajaran';
     protected static ?string $navigationLabel = 'Mata Pelajaran';
-
-    protected static ?string $navigationGroup = 'Class Management';
+    protected static ?string $modelLabel = 'Mata Pelajaran';
+    protected static ?string $pluralModelLabel = 'Mata Pelajaran';
 
     public static function shouldRegisterNavigation(): bool
     {
-        return auth()->user()->hasPermissionTo('view all mata_pelajaran');
+        return auth()->user()->hasRole(['superadmin', 'wali_kelas']);
     }
 
-    public static function canViewAny(): bool
+    public static function canAccess(): bool
     {
-        return auth()->user()->hasPermissionTo('view all mata_pelajaran');
+        return auth()->user()->hasRole(['superadmin', 'wali_kelas']);
     }
 
     public static function form(Form $form): Form
@@ -46,38 +43,12 @@ class MataPelajaranResource extends Resource
         return $form
             ->schema([
                 TextInput::make('nama')->required(),
-                Group::make([
-                    Select::make('hari')
-                        ->options([
-                            'senin' => 'Senin',
-                            'selasa' => 'Selasa',
-                            'rabu' => 'Rabu',
-                            'kamis' => 'Kamis',
-                            'jumat' => 'Jum`at',
-                            'sabtu' => 'Sabtu',
-                        ])
-                        ->native(false)
-                        ->required(),
-                    TimePicker::make('jam')
-                        ->seconds(false)
-                        ->required(),
-                    Select::make('pengajar_id')
-                        ->label('Pengajar')
-                        ->options(
-                            User::all()->mapWithKeys(function ($pengajar) {
-                                $label = $pengajar->nomor_induk
-                                    ? "{$pengajar->nomor_induk} - {$pengajar->name}"
-                                    : $pengajar->name;
-
-                                return [
-                                    $pengajar->id => $label,
-                                ];
-                            })
-                        )
-                        ->native(false)
-                        ->required(),
-                ])->columns(2),
-            ])->columns(1);
+                Select::make('pengajar')
+                    ->options(User::role('guru')->get()->pluck('nama', 'id'))
+                    ->native(false)
+                    ->required()
+            ])
+            ->columns(2);
     }
 
     public static function table(Table $table): Table
@@ -85,9 +56,7 @@ class MataPelajaranResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('nama')->searchable(),
-                TextColumn::make('hari')->searchable(),
-                TextColumn::make('jam')->searchable(),
-                TextColumn::make('pengajar.name')->searchable(),
+                TextColumn::make('guru.nama')->searchable(),
             ])
             ->filters([
                 //
@@ -116,7 +85,6 @@ class MataPelajaranResource extends Resource
             'index' => Pages\ListMataPelajarans::route('/'),
             'create' => Pages\CreateMataPelajaran::route('/create'),
             'edit' => Pages\EditMataPelajaran::route('/{record}/edit'),
-            'view' => Pages\ViewMataPelajaran::route('/{record}')
         ];
     }
 }

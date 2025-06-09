@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Ramsey\Uuid\Uuid;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -16,13 +17,32 @@ class RolePermissionSeeder extends Seeder
     public function run(): void
     {
         $user = User::create([
-            'name' => 'Superadmin SMK 2 Muhammadiyah',
+            'id' => Uuid::uuid4(),
+            'nama' => 'Superadmin SMK 2 Muhammadiyah',
             'email' => 'superadmin@smk2muhammadiyah.com',
-            'password' => 'SuperadminSMK2Muhammadiyah'
+            'password' => 'SuperadminSMK2Muhammadiyah',
+            'nomor_induk' => '000000',
+            'alamat' => 'xxxxxx',
+            'no_hp' => '00000000'
         ]);
-        
+
         $role = Role::create([
             'name' => 'superadmin'
+        ]);
+
+        Role::insert([
+            [
+                'name' => 'guru',
+                'guard_name' => 'web'
+            ],
+            [
+                'name' => 'siswa',
+                'guard_name' => 'web'
+            ],
+            [
+                'name' => 'wali_kelas',
+                'guard_name' => 'web'
+            ],
         ]);
 
         $permissionNames = [
@@ -42,31 +62,6 @@ class RolePermissionSeeder extends Seeder
             'create permission',
             'edit permission',
             'delete permission',
-            'view all jurusan',
-            'view jurusan',
-            'create jurusan',
-            'edit jurusan',
-            'delete jurusan',
-            'view all jenjang',
-            'view jenjang',
-            'create jenjang',
-            'edit jenjang',
-            'delete jenjang',
-            'view all mata_pelajaran',
-            'view mata_pelajaran',
-            'create mata_pelajaran',
-            'edit mata_pelajaran',
-            'delete mata_pelajaran',
-            'view all kelas',
-            'view kelas',
-            'create kelas',
-            'edit kelas',
-            'delete kelas',
-            'view all pertemuan',
-            'view pertemuan',
-            'create pertemuan',
-            'edit pertemuan',
-            'delete pertemuan',
         ];
 
         foreach ($permissionNames as $name) {
