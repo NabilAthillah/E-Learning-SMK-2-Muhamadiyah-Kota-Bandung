@@ -30,7 +30,7 @@ class PertemuanResource extends Resource
     protected static ?string $modelLabel = 'Pertemuan';
     protected static ?string $pluralModelLabel = 'Pertemuan';
 
-    public static ?bool  $shouldRegisterNavigation = false;
+    protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
     {
