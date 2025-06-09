@@ -30,12 +30,12 @@ class LearningResource extends Resource
 
     public static function shouldRegisterNavigation(): bool
     {
-        return auth()->user()->hasRole(['superadmin', 'guru']);
+        return auth()->user()->hasRole(['guru']);
     }
 
     public static function canAccess(): bool
     {
-        return auth()->user()->hasRole(['superadmin', 'guru']);
+        return auth()->user()->hasRole(['guru']);
     }
 
     public static function form(Form $form): Form

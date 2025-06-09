@@ -35,7 +35,7 @@ class PertemuanPage extends Page implements HasForms
 
     public static function canAccess(): bool
     {
-        return auth()->user()->hasRole(['superadmin', 'siswa']);
+        return auth()->user()->hasRole(['siswa']);
     }
 
     public function mount(): void

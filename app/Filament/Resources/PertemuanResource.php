@@ -30,15 +30,7 @@ class PertemuanResource extends Resource
     protected static ?string $modelLabel = 'Pertemuan';
     protected static ?string $pluralModelLabel = 'Pertemuan';
 
-    public static function shouldRegisterNavigation(): bool
-    {
-        return auth()->user()->hasRole(['superadmin']);
-    }
-
-    public static function canAccess(): bool
-    {
-        return auth()->user()->hasRole(['superadmin', 'guru']);
-    }
+    public static ?bool  $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
     {
