@@ -16,4 +16,7 @@ class ClientController extends Controller
 
     public function getSatu() {
         return view('client.aktifitas.index'); }
+    public function getKursus() {
+        return view('client.kursus.index');
+    }
 }

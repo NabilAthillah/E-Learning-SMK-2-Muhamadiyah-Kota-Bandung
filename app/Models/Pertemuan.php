@@ -2,17 +2,28 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Pertemuan extends Model
+class Pertemuan extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasUuids, InteractsWithMedia;
+
+    protected $table = 'pertemuan';
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     protected $guarded = [];
 
-    public function mata_pelajaran()
+    public function pengajaran()
     {
-        return $this->belongsTo(MataPelajaran::class);
+        return $this->belongsTo(Pengajaran::class);
+    }
+
+    public function tugasSiswa()
+    {
+        return $this->hasMany(TugasSiswa::class);
     }
 }

@@ -12,12 +12,8 @@ class EditUser extends EditRecord
 
     protected function getHeaderActions(): array
     {
-        if (auth()->user()->hasPermissionTo('delete user')) {
-            return [
-                Actions\DeleteAction::make(),
-            ];
-        } else {
-            return [];
-        }
+        return [
+            Actions\DeleteAction::make(),
+        ];
     }
 }

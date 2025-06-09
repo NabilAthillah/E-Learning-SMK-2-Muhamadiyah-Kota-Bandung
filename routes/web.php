@@ -10,3 +10,5 @@ Route::name('client.')->controller(ClientController::class)->group(function () {
 });
 
 
+    Route::get('/kursus', 'getKursus')->name('kursus');
+});

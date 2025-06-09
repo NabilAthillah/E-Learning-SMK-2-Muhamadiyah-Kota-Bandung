@@ -12,12 +12,8 @@ class EditKelas extends EditRecord
 
     protected function getHeaderActions(): array
     {
-        if (auth()->user()->hasPermissionTo('delete kelas')) {
-            return [
-                Actions\DeleteAction::make(),
-            ];
-        } else {
-            return [];
-        }
+        return [
+            Actions\DeleteAction::make(),
+        ];
     }
 }
