@@ -43,7 +43,7 @@
         </button>
     </div>
 
-    <section class="flex flex-col items-center justify-center gap-5 px-[100px] py-6">
+    <section class="flex flex-col items-center justify-center gap-5 px-[100px] py-6 sm:px-10 md:px-20 lg:px-24 xl:px-28">
         <div class="flex items-center gap-2">
             <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -65,7 +65,7 @@
             muka secara langsung</p>
     </section>
 
-    <section class="flex flex-col justify-center items-center gap-5 px-[110px] py-9 bg-[#f5f5f9]">
+    <section class="flex flex-col justify-center items-center gap-5 px-[110px] py-9 bg-[#f5f5f9] sm:px-10 md:px-20 lg:px-24 xl:px-28">
         <div class="flex items-center gap-2">
             <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -80,7 +80,7 @@
             </svg>
             <h2 class="font-bold text-[36px] text-black">Fitur E-Learning</h2>
         </div>
-        <div class="grid grid-cols-3 gap-auto justify-between w-full">
+        <div class="grid grid-cols-3 gap-auto justify-between w-full sm:px-10 md:px-20 lg:px-24 xl:px-28 py-6">
             <div
                 class="flex flex-col items-center justify-self-center gap-3 p-6 bg-white shadow-md w-[300px] rounded-[8px]">
                 <img src="{{ asset('/storage/assets/img/fitur_1.png') }}" alt="" class="w-[150px] h-[150px]">
@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div
-                class="flex flex-col items-center justify-self-center gap-3 p-6 bg-white shadow-md w-[300px] rounded-[8px]">
+                class="flex flex-col items-center justify-self-center gap-3 p-6 bg-white shadow-md w-[300px] rounded-[8px] sm:px-10 md:px-20 lg:px-24 xl:px-28 py-6">
                 <img src="{{ asset('/storage/assets/img/fitur_2.png') }}" alt="" class="w-[150px] h-[150px]">
                 <div class="flex flex-col gap-2">
                     <h6 class="font-semibold text-[24px] text-[#041D4D]">Kursus</h6>
@@ -101,7 +101,7 @@
                 </div>
             </div>
             <div
-                class="flex flex-col items-center justify-self-center gap-3 p-6 bg-white shadow-md w-[300px] rounded-[8px]">
+                class="flex flex-col items-center justify-self-center gap-3 p-6 bg-white shadow-md w-[300px] rounded-[8px] sm:px-10 md:px-20 lg:px-24 xl:px-28 py-6">
                 <img src="{{ asset('/storage/assets/img/fitur_3.png') }}" alt="" class="w-[150px] h-[150px]">
                 <div class="flex flex-col gap-2">
                     <h6 class="font-semibold text-[24px] text-[#041D4D]">Aktivitas Sekolah</h6>
@@ -111,7 +111,7 @@
             </div>
     </section>
 
-    <section class="flex flex-col items-center p-6 bg-[#041D4D] shadow-md w-full">
+    <section class="flex flex-col items-center p-6 bg-[#041D4D] shadow-md w-full sm:px-10 md:px-20 lg:px-24 xl:px-28 py-6">
         <div class="flex gap-4 items-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="white" class="w-[40px] h-[40px]">
@@ -176,6 +176,9 @@
                     </div>
                 </div>
             </div>
+          <div class="gap-2 py-2 px-10 rounded-full border border-[#041D4D]">
+            <button class="text-[#041D4D] font-semibold">Lihat Selengkapnya</button>
+          </div>
         </div>
     </section>
 @endsection

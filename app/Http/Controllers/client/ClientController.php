@@ -10,4 +10,8 @@ class ClientController extends Controller
     public function index() {
         return view('client.index');
     }
+
+    public function getKursus() {
+        return view('client.kursus.index');
+    }
 }
